@@ -29,3 +29,4 @@ app.use(express.json())
 
 app.post('/get-category', getCategories)
 
+export default app
