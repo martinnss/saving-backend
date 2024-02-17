@@ -1,0 +1,7 @@
+{
+    "watch": ["src"],  
+    "ext": "mjs js",   
+    "exec": "node --experimental-modules server.mjs",  
+    "type": "module"  
+  }
+  
