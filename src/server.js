@@ -1,11 +1,11 @@
 const PORT = 8000
-import express from 'express'
-import cors from 'cors'
+const express = require('express')
+const cors = require('cors')
 
-import dotenv from 'dotenv';
+const  dotenv = require ('dotenv')
 dotenv.config()
 
-import  getCategories from './controllers/openaiControllers.mjs'
+const  getCategories = require('./controllers/openaiControllers.js')
 
 
 
@@ -29,4 +29,4 @@ app.use(express.json())
 
 app.post('/get-category', getCategories)
 
-export default app
+module.exports =app 

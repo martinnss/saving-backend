@@ -1,4 +1,4 @@
-import OpenAI from 'openai';
+const  OpenAI = require('openai')
 
 
 const getCategories = async (req,res) => {
@@ -27,4 +27,4 @@ const getCategories = async (req,res) => {
     }
 }
 
-export default getCategories
+module.exports= getCategories
