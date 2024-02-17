@@ -12,7 +12,7 @@ const  getCategories = require('./controllers/openaiControllers.js')
 
 const app = express()
 
-app.use(cors()) 
+app.use(cors({ origin: 'http://localhost:3000' }));
 
 
 
