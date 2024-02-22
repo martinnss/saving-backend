@@ -5,7 +5,7 @@ const getCategories = async (req,res) => {
     try {
         
         const openai = new OpenAI({
-            apiKey: process.env.REACT_APP_OPENAI_KEY,
+            apiKey: process.env.OPENAI_API_KEY,
         });
         
         const textOfSellers = req.body.textOfSellers;
