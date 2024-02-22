@@ -11,7 +11,7 @@ const getCategories = async (req,res) => {
         const textOfSellers = req.body.textOfSellers;
 
         const completion = await openai.chat.completions.create({
-            messages: [{"role": "system", "content": 'Identify a category associated with a given seller name. If the provided name appears to be a personal name, classify it as a "small business." Generate ajson ready to parse in javascript containing "seller" : "category" for every single seller'},
+            messages: [{"role": "system", "content": 'Identify a product category associated with a given seller name. If the provided name appears to be a personal name, classify it as a "small business." Generate a json ready to parse in javascript containing "seller" : "category" for every unique seller'},
                 {"role": "user", "content": textOfSellers}],
             model: "gpt-3.5-turbo-1106",
             response_format: { type: "json_object" },
@@ -19,8 +19,8 @@ const getCategories = async (req,res) => {
         });
 
         // Verifica si la respuesta de la API es exitosa
-        if (completion && completion.data) {
-            res.json(completion.data);
+        if (completion.choices[0]) {
+            res.json(completion);
         } else {
             console.error('Error en la respuesta de la API de OpenAI:', completion);
             
