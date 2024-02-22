@@ -27,4 +27,62 @@ const getCategories = async (req,res) => {
     }
 }
 
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////// firebase
+/*
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getAuth, GoogleAuthProvider} from 'firebase/auth'
+import { getFirestore} from'firebase/firestore'
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDJ2eNBvcW2kUJ6YyOnIkkYLK_nxfHvt4M",
+  authDomain: "saving-expenses-tracker.firebaseapp.com",
+  projectId: "saving-expenses-tracker",
+  storageBucket: "saving-expenses-tracker.appspot.com",
+  messagingSenderId: "913565102534",
+  appId: "1:913565102534:web:45e62b392da5febb4bc2c7",
+  measurementId: "G-0SQLDDDEB7"
+};
+
+console.log(firebaseConfig)
+
+// Initialize Firebase
+const appFirebase = initializeApp(firebaseConfig);
+
+const analytics = getAnalytics(appFirebase);
+
+export const provider = new GoogleAuthProvider()
+export const auth = getAuth(appFirebase)
+
+export const db = getFirestore(appFirebase)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+
+const loginEmail = async (req,res) => {
+    try {
+        
+        console.log(req)
+        
+        const textOfSellers = req.body.textOfSellers;
+
+        const loginEmail = await signInWithEmailAndPassword(auth, email, password)
+
+        res.json(completion);
+        
+    } catch (error) {
+        // Manejar errores internos del servidor
+        console.error('Error en el servidor:', error.message);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+}
+
+*/
+
+
 module.exports= getCategories
