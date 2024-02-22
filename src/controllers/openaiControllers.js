@@ -18,11 +18,18 @@ const getCategories = async (req,res) => {
             temperature: 0.4
         });
 
-        res.json(completion);
+        // Verifica si la respuesta de la API es exitosa
+        if (completion && completion.data) {
+            res.json(completion.data);
+        } else {
+            console.error('Error en la respuesta de la API de OpenAI:', completion);
+            
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
         
     } catch (error) {
         // Manejar errores internos del servidor
-        console.error('Error en el servidor:', error.message);
+        console.error('Error en el servidor:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 }
