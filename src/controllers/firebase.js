@@ -11,8 +11,8 @@ const firebaseConfig = {
   projectId: "saving-expenses-tracker",
   storageBucket: "saving-expenses-tracker.appspot.com",
   messagingSenderId: "913565102534",
-  appId: "1:913565102534:web:45e62b392da5febb4bc2c7",
-  measurementId: "G-0SQLDDDEB7"
+  appId: "1:913565102534:web:45bd9003a453a5774bc2c7",
+  measurementId: "G-K0DELJPEXM"
 };
 
 
